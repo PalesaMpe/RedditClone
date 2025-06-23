@@ -1,0 +1,52 @@
+.dashboard-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+  .left {
+    align-items: center;
+
+    display: flex;
+    .heading {
+      font-size: 36px;
+      color: red;
+    }
+  }
+
+  .right {
+    display: flex;
+    align-items: center;
+  }
+  .mat-mdc-form-field-bottom-align {
+    display: none;
+  }
+  .menu-button {
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    border: none;
+    background-color: transparent;
+  }
+  .menu-button:hover {
+    background-color: #f0f0f0;
+    border-radius: 50%;
+  }
+  .primary {
+    margin-left: 10px;
+    background-color: #ff4500;
+    color: white;
+    border-radius: 4px;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      background-color: #e03d00;
+    }
+  }
+}
