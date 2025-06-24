@@ -50,3 +50,42 @@
     }
   }
 }
+.sidenav {
+  button {
+    width: 200px;
+    height: 50px;
+  }
+}
+.topic-carousel {
+  display: flex;
+  padding: 10px 0;
+  gap: 10px;
+}
+.topic {
+  height: 250px;
+  width: 250px;
+}
+.posts {
+  display: flex;
+  gap: 20px;
+  mat-card {
+    flex: 3;
+  }
+  aside {
+    flex: 1;
+  }
+}
+
+.community-card {
+  background-color: #f2f2f2;
+  button {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 5px;
+    p {
+      margin: 0;
+    }
+  }
+}
