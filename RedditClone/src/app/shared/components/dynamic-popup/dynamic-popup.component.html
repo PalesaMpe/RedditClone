@@ -1,0 +1,30 @@
+<section class="dynamic-popup" [style]="data.styles">
+  <div>
+    <button class="close-button" *ngIf="data.options?.close ?? true">
+      <mat-icon (click)="closePopup()">close</mat-icon>
+    </button>
+  </div>
+  <section *ngIf="data.content.title">
+    <p [style]="data.content.title.styles">{{ data.content.title.text }}</p>
+  </section>
+  <section *ngIf="data.content.description">
+    <p [style]="data.content.description.styles">
+      {{ data.content.description.text }}
+    </p>
+  </section>
+  <section>
+    <ng-container #container></ng-container>
+
+    <mat-dialog-actions *ngIf="data.content.buttons">
+      <ng-container *ngFor="let button of data.content.buttons; let i = index">
+        <button
+          class="action-button"
+          [ngClass]="button.type"
+          (click)="onAction(button)"
+        >
+          {{ button.label }}
+        </button>
+      </ng-container>
+    </mat-dialog-actions>
+  </section>
+</section>
