@@ -1,0 +1,58 @@
+@use "@angular/material" as mat;
+@include mat.core();
+
+mat-form-field {
+  @include mat.form-field-density(-3);
+}
+.login {
+  width: min-content;
+  margin: auto;
+}
+mat-form-field {
+  width: 100%;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  hr {
+    background-color: #d6d6d6;
+    flex: 1;
+  }
+  span {
+    padding: 0 5px;
+  }
+}
+.primary {
+  margin-left: 10px;
+  background-color: #ff4500;
+  color: white;
+  border-radius: 4px;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  justify-self: center;
+
+  &:hover {
+    background-color: #e03d00;
+  }
+}
+.login-heading {
+  button {
+    display: flex;
+    width: 250px;
+    height: 40px;
+    margin: 10px auto;
+    border: 1px solid grey;
+    background-color: transparent;
+    border-radius: 15px;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.login-form {
+  text-align: center;
+}
