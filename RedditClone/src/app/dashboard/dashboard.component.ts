@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  ContentChildren,
+  OnInit,
+  QueryList,
+  TemplateRef,
+} from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DynamicPopupComponent } from '../shared/components/dynamic-popup/dynamic-popup.component';
 import { DashboardLoginComponent } from './dashboard-login/dashboard-login.component';
@@ -10,6 +16,8 @@ import {
 } from './dashboard-store/actions/dashboard.actions';
 import { selectPosts } from './dashboard-store/selectors/dashboard.selectors';
 import { GetPostsResponse } from './dashboard-mock';
+import { Post } from '../shared/models/models';
+import { CarouselItemDirective } from '../shared/components/carousel/carousel-item.directive';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -21,6 +29,8 @@ export class DashboardComponent implements OnInit {
     private dashboardStore: Store<DashboardState>
   ) {}
   openMenu = false;
+  posts: Post[] = [];
+  currentIndex = 0;
 
   ngOnInit(): void {
     this.dashboardStore.dispatch(getPostsAction());
@@ -29,9 +39,10 @@ export class DashboardComponent implements OnInit {
     );
     this.dashboardStore.pipe(select(selectPosts)).subscribe((posts) => {
       console.log('Posts from store:', posts);
-      // You can handle the posts here, e.g., display them in the UI
+      this.posts = posts;
     });
   }
+
   onLogin() {
     this.dialog.open(DynamicPopupComponent, {
       data: {

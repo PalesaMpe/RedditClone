@@ -47,6 +47,39 @@ export const GetPostsResponse: Post[] = [
     commentCount: 20,
     createdAt: new Date(),
   },
+  {
+    id: '4d5e6f7g-8h9i-0j1k-2l3m-4n5o6p7q8r9s',
+    title: 'Exploring Quantum Computing',
+    content: `Quantum computing is set to transform industries by solving problems
+        that are impossible for classical computers to handle.`,
+    postType: 'text',
+    authorId: 'd4e5f6g7-h8i9-j0k1-l2m3-n4o5p6q7r8s9',
+    likeCount: 150,
+    commentCount: 20,
+    createdAt: new Date(),
+  },
+  {
+    id: '4d5e6f7g-8h9i-0j1k-2l3m-4n5o6p7q8r9s',
+    title: 'Exploring Quantum Computing',
+    content: `Quantum computing is set to transform industries by solving problems
+        that are impossible for classical computers to handle.`,
+    postType: 'text',
+    authorId: 'd4e5f6g7-h8i9-j0k1-l2m3-n4o5p6q7r8s9',
+    likeCount: 150,
+    commentCount: 20,
+    createdAt: new Date(),
+  },
+  {
+    id: '4d5e6f7g-8h9i-0j1k-2l3m-4n5o6p7q8r9s',
+    title: 'Exploring Quantum Computing',
+    content: `Quantum computing is set to transform industries by solving problems
+        that are impossible for classical computers to handle.`,
+    postType: 'text',
+    authorId: 'd4e5f6g7-h8i9-j0k1-l2m3-n4o5p6q7r8s9',
+    likeCount: 150,
+    commentCount: 20,
+    createdAt: new Date(),
+  },
 ];
 
 export const GetCommentsResponse = [

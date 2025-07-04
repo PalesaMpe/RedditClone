@@ -61,6 +61,18 @@
   padding: 10px 0;
   gap: 10px;
 }
+
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1;
+}
 .topic {
   height: 250px;
   width: 250px;
