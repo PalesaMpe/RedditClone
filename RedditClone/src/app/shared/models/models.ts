@@ -8,3 +8,11 @@ export interface Post {
   commentCount: number;
   createdAt: Date;
 }
+
+export interface Community{
+
+  name: string;
+  description: string;
+  memberCount: number;
+  createdAt: Date;
+}

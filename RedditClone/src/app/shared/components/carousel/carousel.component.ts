@@ -5,7 +5,6 @@ import {
   Directive,
   ElementRef,
   Input,
-  OnInit,
   QueryList,
   ViewChild,
   ViewChildren,
@@ -24,7 +23,7 @@ import {
 @Directive({
   selector: '.carousel-item',
 })
-export class CarouselItemElement {}
+export class CarouselItemElement { }
 
 @Component({
   standalone: true,
@@ -36,7 +35,7 @@ export class CarouselItemElement {}
 export class CarouselComponent implements AfterViewInit {
   @ContentChildren(CarouselItemDirective)
   items!: QueryList<CarouselItemDirective>;
-  @ViewChildren('carousel-item', { read: ElementRef })
+  @ViewChildren('carouselItem', { read: ElementRef })
   private itemsElements!: QueryList<ElementRef>;
   @ViewChild('carousel') private carousel!: ElementRef;
   @Input() timing = '250ms ease-in';
@@ -47,25 +46,13 @@ export class CarouselComponent implements AfterViewInit {
 
   private player?: AnimationPlayer;
 
-  constructor(private builder: AnimationBuilder) {}
+  constructor(private builder: AnimationBuilder) { }
+
   ngAfterViewInit() {
-    this.itemsElements.changes.subscribe(() => {
-      console.log('Items Elements:', this.itemsElements.toArray());
-      if (this.itemsElements.first) {
-        this.itemWidth =
-          this.itemsElements.first.nativeElement.getBoundingClientRect().width;
-        this.carouselWrapperStyle = {
-          width: `${this.itemWidth}px`,
-        };
-      }
-    });
-    console.log('Items:', this.items.toArray());
-    console.log('Items Elements:', this.itemsElements.toArray());
     this.itemWidth =
       this.itemsElements.first.nativeElement.getBoundingClientRect().width;
-    console.log('Item Width:', this.itemWidth);
     this.carouselWrapperStyle = {
-      width: `${this.itemWidth}px`,
+      width: `${this.itemWidth * 2}px`,
     };
   }
   next() {

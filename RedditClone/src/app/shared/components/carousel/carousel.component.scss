@@ -1,18 +1,18 @@
 .carousel-container {
-  overflow: hidden;
+  overflow: visible;
 }
 
-.carousel {
-  width: 6000px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
 
 .carousel-inner {
   display: flex;
+  width: 100%;
 }
 .carousel-item {
-  min-width: 100%;
-  box-sizing: border-box;
+  width: 100%;
+  display: block;
+
+      width: 100%;
+
+    margin: 10px;
+
 }

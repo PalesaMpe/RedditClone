@@ -1,6 +1,8 @@
 import { createReducer, on } from '@ngrx/store';
 import { DashboardState } from '../state/dashboard.state';
 import {
+  GetCommunitiesByPopularityAction,
+  GetCommunitiesByPopularityPayloadAction,
   getPostsAction,
   getPostsFailureAction,
   getPostsPayloadAction,
@@ -8,6 +10,7 @@ import {
 
 const initialState: DashboardState = {
   posts: [],
+  popularCommunities: [],
   isLoading: false,
   isInErrorState: false,
   error: {
@@ -35,5 +38,14 @@ export const dashboardReducer = createReducer(
       errorDescription:
         error.errorDescription || 'An unexpected error occurred.',
     },
+  })),
+  on(GetCommunitiesByPopularityAction, (state) => ({
+    ...state,
+    isLoading: true,
+  })),
+  on(GetCommunitiesByPopularityPayloadAction, (state, { communities }) => ({
+    ...state,
+    popularCommunities: communities,
+    isLoading: false,
   }))
 );

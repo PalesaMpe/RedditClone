@@ -1,4 +1,4 @@
-import { Post } from '../shared/models/models';
+import { Community, Post } from '../shared/models/models';
 
 export const GetPostsResponse: Post[] = [
   {
@@ -47,6 +47,7 @@ export const GetPostsResponse: Post[] = [
     commentCount: 20,
     createdAt: new Date(),
   },
+
   {
     id: '4d5e6f7g-8h9i-0j1k-2l3m-4n5o6p7q8r9s',
     title: 'Exploring Quantum Computing',
@@ -58,28 +59,7 @@ export const GetPostsResponse: Post[] = [
     commentCount: 20,
     createdAt: new Date(),
   },
-  {
-    id: '4d5e6f7g-8h9i-0j1k-2l3m-4n5o6p7q8r9s',
-    title: 'Exploring Quantum Computing',
-    content: `Quantum computing is set to transform industries by solving problems
-        that are impossible for classical computers to handle.`,
-    postType: 'text',
-    authorId: 'd4e5f6g7-h8i9-j0k1-l2m3-n4o5p6q7r8s9',
-    likeCount: 150,
-    commentCount: 20,
-    createdAt: new Date(),
-  },
-  {
-    id: '4d5e6f7g-8h9i-0j1k-2l3m-4n5o6p7q8r9s',
-    title: 'Exploring Quantum Computing',
-    content: `Quantum computing is set to transform industries by solving problems
-        that are impossible for classical computers to handle.`,
-    postType: 'text',
-    authorId: 'd4e5f6g7-h8i9-j0k1-l2m3-n4o5p6q7r8s9',
-    likeCount: 150,
-    commentCount: 20,
-    createdAt: new Date(),
-  },
+  
 ];
 
 export const GetCommentsResponse = [
@@ -116,3 +96,124 @@ export const GetCommentsResponse = [
     voteCount: 15,
   },
 ];
+export const GetCommunitiesByPopularityResponse: Community[] = [
+  {
+    name: 'AI Enthusiasts',
+    description: 'A community for those passionate about artificial intelligence.',
+    memberCount: 1500,
+    createdAt: new Date(),
+  },
+  {
+    name: 'Web Developers',
+    description: 'Discuss the latest in web development, frameworks, and best practices.',
+    memberCount: 3200,
+    createdAt: new Date(),
+  },
+  {
+    name: 'Data Science Central',
+    description: 'A hub for data scientists and machine learning practitioners.',
+    memberCount: 2800,
+    createdAt: new Date(),
+  },
+  {
+    name: 'Gamers United',
+    description: 'For everyone who loves video games, from casual to pro.',
+    memberCount: 4100,
+    createdAt: new Date(),
+  },
+  {
+    name: 'Book Lovers',
+    description: 'Share and discuss your favorite books and authors.',
+    memberCount: 1700,
+    createdAt: new Date(),
+  },
+  {
+    name: 'Fitness Freaks',
+    description: 'A place for fitness tips, routines, and motivation.',
+    memberCount: 2300,
+    createdAt: new Date(),
+  },
+  {
+    name: 'Travel Addicts',
+    description: 'Share travel stories, tips, and bucket lists.',
+    memberCount: 1950,
+    createdAt: new Date(),
+  },
+  {
+    name: 'Movie Buffs',
+    description: 'Discuss the latest movies, classics, and everything in between.',
+    memberCount: 2600,
+    createdAt: new Date(),
+  },
+  {
+    name: 'Crypto Corner',
+    description: 'All about cryptocurrency, blockchain, and digital assets.',
+    memberCount: 3400,
+    createdAt: new Date(),
+  },
+  {
+    name: 'Photography World',
+    description: 'For photographers of all levels to share and learn.',
+    memberCount: 1500,
+    createdAt: new Date(),
+  },
+  {
+    name: 'Music Makers',
+    description: 'A community for musicians, producers, and music lovers.',
+    memberCount: 2100,
+    createdAt: new Date(),
+  },
+  {
+    name: 'Parenting Tips',
+    description: 'Advice and support for parents and caregivers.',
+    memberCount: 1200,
+    createdAt: new Date(),
+  },
+  {
+    name: 'Foodies',
+    description: 'Share recipes, restaurant reviews, and food pics.',
+    memberCount: 2750,
+    createdAt: new Date(),
+  },
+  {
+    name: 'Pet Lovers',
+    description: 'A place for pet owners to share stories and advice.',
+    memberCount: 1800,
+    createdAt: new Date(),
+  },
+  {
+    name: 'Investing Insights',
+    description: 'Discuss stocks, markets, and personal finance.',
+    memberCount: 2200,
+    createdAt: new Date(),
+  },
+  {
+    name: 'Science Geeks',
+    description: 'For those who love science, experiments, and discoveries.',
+    memberCount: 1600,
+    createdAt: new Date(),
+  },
+  {
+    name: 'History Buffs',
+    description: 'Explore and discuss historical events and figures.',
+    memberCount: 1100,
+    createdAt: new Date(),
+  },
+  {
+    name: 'Anime & Manga',
+    description: 'Talk about your favorite anime and manga series.',
+    memberCount: 2450,
+    createdAt: new Date(),
+  },
+  {
+    name: 'Coding Challenges',
+    description: 'Sharpen your coding skills with daily challenges.',
+    memberCount: 2000,
+    createdAt: new Date(),
+  },
+  {
+    name: 'Sustainable Living',
+    description: 'Tips and discussions on eco-friendly living.',
+    memberCount: 900,
+    createdAt: new Date(),
+  }]

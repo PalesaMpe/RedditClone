@@ -11,13 +11,12 @@ import { DashboardLoginComponent } from './dashboard-login/dashboard-login.compo
 import { Store, select } from '@ngrx/store';
 import { DashboardState } from './dashboard-store/state/dashboard.state';
 import {
+  GetCommunitiesByPopularityAction,
   getPostsAction,
   getPostsPayloadAction,
 } from './dashboard-store/actions/dashboard.actions';
-import { selectPosts } from './dashboard-store/selectors/dashboard.selectors';
-import { GetPostsResponse } from './dashboard-mock';
-import { Post } from '../shared/models/models';
-import { CarouselItemDirective } from '../shared/components/carousel/carousel-item.directive';
+import {  state } from './dashboard-store/selectors/dashboard.selectors';
+import { Community, Post } from '../shared/models/models';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -30,16 +29,17 @@ export class DashboardComponent implements OnInit {
   ) {}
   openMenu = false;
   posts: Post[] = [];
+  popularCommunities: Community[] = [];
   currentIndex = 0;
 
   ngOnInit(): void {
     this.dashboardStore.dispatch(getPostsAction());
     this.dashboardStore.dispatch(
-      getPostsPayloadAction({ posts: GetPostsResponse })
+      GetCommunitiesByPopularityAction({size: 15})
     );
-    this.dashboardStore.pipe(select(selectPosts)).subscribe((posts) => {
-      console.log('Posts from store:', posts);
-      this.posts = posts;
+    this.dashboardStore.pipe(select(state)).subscribe((state) => {
+      this.posts = state.posts;
+      this.popularCommunities = state.popularCommunities;
     });
   }
 
