@@ -18,7 +18,7 @@
     </button>
   </section>
 </section>
-<mat-drawer-container>
+<mat-drawer-container class="dashboard-content">
   <mat-drawer #drawer class="sidenav" mode="side">
     <button>
       <mat-icon>home</mat-icon>
@@ -28,40 +28,19 @@
 
   <section class="container">
     <article class="content">
-      <section class="topic-carousel">
-        <mat-card class="topic" appearance="outlined">
-          <mat-card-header>
-            <div mat-card-avatar class="example-header-image"></div>
-            <mat-card-title>Shiba Inu</mat-card-title>
-            <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-          </mat-card-header>
-
-          <mat-card-content>
-            <p>
-              The Shiba Inu is the smallest of the six original and distinct
-              spitz breeds of dog from Japan. A small, agile dog that copes very
-              well with mountainous terrain, the Shiba Inu was originally bred
-              for hunting.
-            </p>
-          </mat-card-content>
-        </mat-card>
-        <mat-card class="topic" appearance="outlined">
-          <mat-card-header>
-            <div mat-card-avatar class="example-header-image"></div>
-            <mat-card-title>Shiba Inu</mat-card-title>
-            <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-          </mat-card-header>
-
-          <mat-card-content>
-            <p>
-              The Shiba Inu is the smallest of the six original and distinct
-              spitz breeds of dog from Japan. A small, agile dog that copes very
-              well with mountainous terrain, the Shiba Inu was originally bred
-              for hunting.
-            </p>
-          </mat-card-content>
-        </mat-card>
-      </section>
+      <carousel>
+        <ng-template *ngFor="let post of posts" carouselItem>
+              <mat-card class="topic" appearance="outlined">
+                <mat-card-header>
+                  <div mat-card-avatar class="example-header-image"></div>
+                  <mat-card-title>{{ post.title }}</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                  <p>{{ post.content }}</p>
+                </mat-card-content>
+              </mat-card>
+        </ng-template>
+      </carousel>
       <section class="posts">
         <mat-card appearance="outlined">
           <mat-card-header>
@@ -78,22 +57,16 @@
               for hunting.
             </p>
           </mat-card-content>
-          <!-- <mat-card-actions>
-          <button matButton>LIKE</button>
-          <button matButton>SHARE</button>
-        </mat-card-actions> -->
         </mat-card>
-        <aside>
-          <mat-card appearance="outlined" class="community-card">
-            <h3>Popular Communities</h3>
-            <button>
-              <p class="community-name">nr/AskHer</p>
-              <p class="community-size">6,000 members</p>
-            </button>
-            <button>
-              <p>nr/AskHim</p>
-              <p>6,000 members</p>
-            </button>
+        <aside *ngIf="popularCommunities.length>0">
+          <mat-card appearance="outlined" class="community-card"  >
+            <h3 class="pop-title">Popular Communities</h3>
+            <ng-container *ngFor="let community of popularCommunities">
+              <button>
+                <p class="community-name">{{ community.name }}</p>
+                <p class="community-size">{{ community.memberCount }} members</p>
+              </button>
+            </ng-container>
           </mat-card>
         </aside>
       </section>
