@@ -1,75 +1,140 @@
-<section class="dashboard-container">
+<section class="dashboard-header">
   <section class="left">
-    <button class="menu-button" (click)="drawer.toggle()">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <p class="heading"><mat-icon> chat_bubble</mat-icon>Not Reddit</p>
+    <p class="heading"><mat-icon> chat_bubble</mat-icon>POOL PAY</p>
   </section>
-
+  <section class="middle">
+    <a>Home</a>
+    <a>About Us</a>
+    <a>Features</a>
+    <a>FAQ</a>
+  </section>
   <section class="right">
-    <mat-form-field subscriptSizing="dynamic" appearance="outline">
-      <mat-icon matPrefix>search</mat-icon>
-      <input matInput placeholder="Search topic" />
-    </mat-form-field>
-    <button mat-raised-button class="primary">Get Appp</button>
-    <button mat-raised-button class="primary" (click)="onLogin()">
+    <button mat-raised-button class="primary">Get App</button>
+    <button mat-raised-button class="secondary" (click)="onLogin()">
       <mat-icon>person</mat-icon>
       Login
     </button>
   </section>
 </section>
-<mat-drawer-container class="dashboard-content">
-  <mat-drawer #drawer class="sidenav" mode="side">
-    <button>
-      <mat-icon>home</mat-icon>
-      <span>Home</span>
-    </button>
-  </mat-drawer>
 
-  <section class="container">
-    <article class="content">
-      <carousel>
-        <ng-template *ngFor="let post of posts" carouselItem>
-              <mat-card class="topic" appearance="outlined">
-                <mat-card-header>
-                  <div mat-card-avatar class="example-header-image"></div>
-                  <mat-card-title>{{ post.title }}</mat-card-title>
-                </mat-card-header>
-                <mat-card-content>
-                  <p>{{ post.content }}</p>
-                </mat-card-content>
-              </mat-card>
-        </ng-template>
-      </carousel>
-      <section class="posts">
-        <mat-card appearance="outlined">
-          <mat-card-header>
-            <div mat-card-avatar class="example-header-image"></div>
-            <mat-card-title>Shiba Inu</mat-card-title>
-            <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-          </mat-card-header>
-
-          <mat-card-content>
-            <p>
-              The Shiba Inu is the smallest of the six original and distinct
-              spitz breeds of dog from Japan. A small, agile dog that copes very
-              well with mountainous terrain, the Shiba Inu was originally bred
-              for hunting.
-            </p>
-          </mat-card-content>
-        </mat-card>
-        <aside *ngIf="popularCommunities.length>0">
-          <mat-card appearance="outlined" class="community-card"  >
-            <h3 class="pop-title">Popular Communities</h3>
-            <ng-container *ngFor="let community of popularCommunities">
-              <button>
-                <p class="community-name">{{ community.name }}</p>
-                <p class="community-size">{{ community.memberCount }} members</p>
-              </button>
-            </ng-container>
-          </mat-card>
-        </aside>
-      </section>
-    </article>
+<section class="dashboard-container">
+  <section class="main">
+    <!-- main -->
+    <section class="content">
+      <h1>Save Together</h1>
+      <h1>Go Further</h1>
+      <p>
+        Pool Pay helps you and your friends save money together for trips,
+        events, or group goals. Create a pool, set a target amount, and invite
+        others to contribute. Track progress in real time and access the funds
+        when the goal is reached — simple, transparent, and stress-free
+      </p>
+      <button mat-raised-button class="primary">Get Started</button>
+    </section>
+    <img src="../../assets/images/Person.png" />
   </section>
-</mat-drawer-container>
+  <section class="features-section">
+    <h1>Features</h1>
+
+    <mat-card class="topic" appearance="outlined">
+      <mat-card-header>
+        <mat-card-title>Real-Time Tracking</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>See progress instantly</p>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="topic" appearance="outlined">
+      <mat-card-header>
+        <mat-card-title>Real-Time Tracking</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>
+          Stay motivated as you watch your pool grow with real-time progress
+          updates. Every contribution is reflected instantly, and members are
+          notified the moment someone contributes. Progress bars and simple
+          charts make it easy to see exactly how close you are to reaching your
+          savings goal, keeping everyone engaged and excited along the way
+        </p>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="topic" appearance="outlined">
+      <mat-card-header>
+        <mat-card-title>Real-Time Tracking</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>See progress instantly</p>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="topic" appearance="outlined">
+      <mat-card-header>
+        <mat-card-title>Real-Time Tracking</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>See progress instantly</p>
+      </mat-card-content>
+    </mat-card>
+  </section>
+  <section class="how-to-section">
+    <section class="top">
+      <h1>
+        We drive better outcomes and savings for your trips with your family and
+        friends
+      </h1>
+
+      <div></div>
+    </section>
+    <hr />
+    <section class="top">
+      <img src="../../assets/images/Phone.png" />
+      <p>
+        Be the successful group when it comes to travelling. Heres how to do so
+      </p>
+    </section>
+  </section>
+  <section class="benefits-section">
+    <h1>Why choose us?</h1>
+    <section class="benefits-points">
+      <div class="benefits-point">
+        <mat-icon>person</mat-icon>
+        <p>Budget Friendly</p>
+        <p>We are budget friendly testttt</p>
+      </div>
+      <div class="benefits-point">
+        <mat-icon>person</mat-icon>
+        <p>Budget Friendly</p>
+        <p>We are budget friendly testttt</p>
+      </div>
+      <div class="benefits-point">
+        <mat-icon>person</mat-icon>
+        <p>Budget Friendly</p>
+        <p>We are budget friendly testttt</p>
+      </div>
+    </section>
+  </section>
+
+  <section class="footer">
+    <section class="subscription">
+      <div>
+        <p class="title">Join our email list</p>
+        <p>Get the latest news and secure better trips.</p>
+      </div>
+
+      <section class="email-section">
+        <mat-form-field subscriptSizing="dynamic" appearance="outline">
+          <!-- <mat-icon matPrefix>search</mat-icon> -->
+          <input matInput placeholder="Email Address" />
+        </mat-form-field>
+        <button mat-raised-button class="primary">Sign Up</button>
+      </section>
+    </section>
+
+    <h2>Quick Links</h2>
+    <a>Search</a>
+    <a>Contact us</a>
+    <a>Privacy policy</a>
+
+    <hr />
+    <p>2025 Pool Pay</p>
+  </section>
+</section>
